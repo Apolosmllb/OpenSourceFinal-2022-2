@@ -11,15 +11,14 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 @RestController
 @RequestMapping(value = "api/v1/drivers", produces = "application/json")
@@ -44,13 +43,19 @@ public class ScoresController {
     @Operation(summary = "Get all Scores By Scope 0 and 1")
     public ResponseEntity<?> getAllScoresByScope(@RequestParam Long scope, @PathVariable Long driverId) {
         if(scope == 0 ) {
-            double t = scoreService.getAverage(driverId);
-            return ResponseEntity.ok("Promedio Total: "+t);
+            Double t = scoreService.getAverage(driverId);
+            String m= "average: ";
+            Map<String, Double> response = new HashMap<>();
+            response.put(m,t);
+            return ResponseEntity.ok(response);
         }
         if(scope == 1 ) {
-            double t = scoreService.getMax(driverId);
-            return ResponseEntity.ok("Value Max: "  + t);
-        }
+            String m= "maxValue: ";
+            Map<String, Double> response = new HashMap<>();
+            Double t = scoreService.getMax(driverId);
+            response.put(m,t);
+            return ResponseEntity.ok(response);
+        }   
         return ResponseEntity.badRequest().build();
     }
 
