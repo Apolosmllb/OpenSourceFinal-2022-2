@@ -22,15 +22,11 @@ public class Score {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-
     @Column
     private Long driverId;
-
     @NotNull
     @Column
     private Double value;
-
     @Column
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date registeredAt;
