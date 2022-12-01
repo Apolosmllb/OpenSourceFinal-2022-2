@@ -67,10 +67,6 @@ public class ScoresController {
                 scoreService.create(mapper.toModel(resource),driverId)),
                 HttpStatus.CREATED);
     }
-    /*@Operation(summary = "Create Student",
-            responses = {@ApiResponse(description = "Student successfully created",
-                    responseCode = "201", content = @Content(mediaType = "application/json",
-                    schema = @Schema(implementation = ScoreResource.class)))})*/
 
 
 }
