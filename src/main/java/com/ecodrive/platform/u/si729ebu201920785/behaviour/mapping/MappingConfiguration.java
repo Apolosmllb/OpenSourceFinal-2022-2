@@ -9,5 +9,4 @@ public class MappingConfiguration {
     public ScoreMapper studentMapper() {
         return new ScoreMapper();
     }
-
 }
