@@ -18,9 +18,7 @@ import java.util.Set;
 @Service
 public class ScoreServiceImpl implements ScoreService {
     private static final String ENTITY = "Score";
-
     private final ScoreRespository scoreRespository;
-
     private final Validator validator;
 
 
@@ -29,13 +27,10 @@ public class ScoreServiceImpl implements ScoreService {
         this.validator = validator;
     }
 
-
     @Override
     public Score create(Score score,  Long driverId) {
-
         // Constraints validation
         Set<ConstraintViolation<Score>> violations = validator.validate(score);
-
         if (!violations.isEmpty())
             throw new ResourceValidationException(ENTITY, violations);
 
@@ -43,12 +38,10 @@ public class ScoreServiceImpl implements ScoreService {
         score.setRegisteredAt(new Date());
         return scoreRespository.save(score);
     }
-
     @Override
     public List<Score> getAll() {
         return scoreRespository.findAll();
     }
-
     @Override
     public Double getAverage(Long driverId) {
         return scoreRespository.getAverage(driverId);
