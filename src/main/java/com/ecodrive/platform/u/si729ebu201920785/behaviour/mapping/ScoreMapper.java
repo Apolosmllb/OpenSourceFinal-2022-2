@@ -16,20 +16,15 @@ import java.util.List;
 public class ScoreMapper {
     @Autowired
     EnhancedModelMapper mapper;
-
     public ScoreResource toResource(Score model) {
         return mapper.map(model, ScoreResource.class);
     }
-
     public Page<ScoreResource> modelListPage(List<Score> modelList,
                                              Pageable pageable) {
         return new PageImpl<>(mapper.mapList(modelList,
                 ScoreResource.class), pageable, modelList.size());
     }
-
     public Score toModel(CreateScoreResource resource) {
         return mapper.map(resource, Score.class);
     }
-
-
 }
