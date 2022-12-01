@@ -55,7 +55,7 @@ public class ScoresController {
             Double t = scoreService.getMax(driverId);
             response.put(m,t);
             return ResponseEntity.ok(response);
-        }   
+        }
         return ResponseEntity.badRequest().build();
     }
 
