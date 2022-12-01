@@ -7,17 +7,11 @@ import com.ecodrive.platform.u.si729ebu201920785.behaviour.mapping.ScoreMapper;
 import com.ecodrive.platform.u.si729ebu201920785.behaviour.resource.CreateScoreResource;
 import com.ecodrive.platform.u.si729ebu201920785.behaviour.resource.ScoreResource;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.constraints.NotNull;
-import java.math.BigDecimal;
 import java.util.*;
 
 @RestController
