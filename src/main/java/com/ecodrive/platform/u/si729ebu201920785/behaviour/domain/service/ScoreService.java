@@ -6,14 +6,8 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface ScoreService {
-
     Score create(Score score, Long driverId);
-
     List<Score> getAll();
-
     Double getAverage(Long driverId);
-
     Double getMax(Long driverId);
-
-
 }
