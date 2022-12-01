@@ -12,5 +12,5 @@ import java.util.Date;
 public class ScoreResource {
     private Long driverId;
     private Double value;
-    private  Date registeredAt;
+    //private  Date registeredAt;
 }
